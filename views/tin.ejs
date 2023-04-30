@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><hr>
+
+    <h1>Tin Noi Bat</h1>
+    <hr>
+    <div id="tnb">
+        <script>
+        fetch("http://localhost:3000/tin/tnb")
+            .then ( res => res.json())
+            .then ( data => {
+                console.log(data);
+                let = document.getElementById("tnb");
+                data.forEach(tin => {
+                    tnb.innerHTML+= `
+                        <div>
+                            <h4>${tin.TieuDe}</h4>
+                            <p>${tin.TomTat}</p>
+                        </div>
+
+                    `;
+                });
+            })
+        </script>
+    </div>
+
+    <hr>
+    <h1>Tin Xem Nhiu</h1>
+    <hr>
+    <div id="txn">
+        <script>
+        fetch("http://localhost:3000/tin/txn")
+            .then ( res => res.json())
+            .then ( data => {
+                console.log(data);
+                let = document.getElementById("txn");
+                data.forEach(tin => {
+                    txn.innerHTML+= `
+                        <div>
+                            <h4>${tin.TieuDe}</h4>
+                            <p>${tin.TomTat}</p>
+                        </div>
+
+                    `;
+                });
+            })
+        </script>
+    </div>
+    
+</body>
+</html>
